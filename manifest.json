@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Save-Links",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "money-bag.png"
+    }
+}

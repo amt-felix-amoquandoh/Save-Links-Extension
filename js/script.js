@@ -2,6 +2,14 @@ let myLinks = [];
 const inputLinks = document.getElementById("saveInput");
 const saveLink = document.getElementById("saveBtn");
 const link = document.getElementById("linkList");
+let savedLinksInStorage = JSON.parse(localStorage.getItem("myLinks"))
+
+
+
+if(savedLinksInStorage){
+  myLinks = savedLinksInStorage;
+  renderLinks();
+}
 
 function linkLength (){
   return inputLinks.value.length;
@@ -10,9 +18,11 @@ function linkLength (){
 
 function saveItem (){  
     myLinks.push(inputLinks.value);
-    renderLinks();
     inputLinks.value = ""
+    localStorage.setItem("myLinks", JSON.stringify(myLinks));
+    renderLinks();
   }
+  
 
 function saveOnClicking (){
     if(linkLength() > 1){
