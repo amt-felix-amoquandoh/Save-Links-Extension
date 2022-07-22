@@ -2,9 +2,10 @@ let myLinks = [];
 const inputLinks = document.getElementById("saveInput");
 const saveLink = document.getElementById("saveBtn");
 const link = document.getElementById("linkList");
-let savedLinksInStorage = JSON.parse(localStorage.getItem("myLinks"))
-
-
+const deleteLinks = document.getElementById("deleteBtn");
+const savedLinksInStorage = JSON.parse(localStorage.getItem("myLinks"))
+ 
+ 
 
 if(savedLinksInStorage){
   myLinks = savedLinksInStorage;
@@ -36,9 +37,16 @@ function saveOnEnter (event) {
   event.preventDefault();
 }
 } 
+ 
+function deleteOnclick(){
+  localStorage.clear();
+  myLinks = [];
+  renderLinks();
+};
 
 inputLinks.addEventListener("keypress", saveOnEnter);
 saveLink.addEventListener("click", saveOnClicking);
+deleteLinks.addEventListener("click", deleteOnclick);
 
 
 function renderLinks(){
