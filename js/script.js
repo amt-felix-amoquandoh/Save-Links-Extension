@@ -3,6 +3,7 @@ const inputLinks = document.getElementById("saveInput");
 const saveLink = document.getElementById("saveBtn");
 const link = document.getElementById("linkList");
 const deleteLinks = document.getElementById("deleteBtn");
+const saveTab = document.getElementById("saveTabBtn");
 const savedLinksInStorage = JSON.parse(localStorage.getItem("myLinks"))
  
  
@@ -44,9 +45,18 @@ function deleteOnclick(){
   renderLinks();
 };
 
+
+function saveTabOnclick(arr){
+  myLinks.push(arr[0].url);  
+  localStorage.setItem("myLinks", JSON.stringify(myLinks));
+  renderLinks();  
+}
+
+
 inputLinks.addEventListener("keypress", saveOnEnter);
 saveLink.addEventListener("click", saveOnClicking);
 deleteLinks.addEventListener("click", deleteOnclick);
+saveTab.addEventListener("click", saveTabOnclick);
 
 
 function renderLinks(){

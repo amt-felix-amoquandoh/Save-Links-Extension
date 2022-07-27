@@ -33,15 +33,15 @@ body{
   background: rgb(12, 158, 12);
   border: none;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
 }
 
-.formBtn:hover{
-  color: rgb(12, 158, 12);
-  background: rgb(191, 191, 191);
+.saveTabBtn{
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(236, 236, 236);
+  background: rgb(7, 116, 233);
+  border: none;
+  border-radius: 3px;
 }
 
 .deleteBtn{
@@ -52,6 +52,18 @@ body{
   border: none;
   border-radius: 3px;
 }
+
+
+.formBtn:hover{
+  color: rgb(12, 158, 12);
+  background: rgb(191, 191, 191);
+}
+
+.saveTabBtn:hover{
+  color: rgb(7, 116, 233);
+  background: rgb(191, 191, 191);
+}
+
 
 .deleteBtn:hover{
   color: crimson;
