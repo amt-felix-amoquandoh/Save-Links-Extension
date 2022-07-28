@@ -47,17 +47,19 @@ function deleteOnclick(){
 
 
 function saveTabOnclick(arr){
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
-    // since only one tab should be active and in the current window at once
-    // the return variable should only have one entry
-    var activeTab = tabs[0];
-    var activeTabId = activeTab.id; // or do whatever you need
+//     
+//     var activeTab = tabs[0];
+//     var activeTabId = activeTab.id;
 
- });
-  myLinks.push(arr[0].url);  
+//  });
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+  myLinks.push(tabs[0].url);  
   localStorage.setItem("myLinks", JSON.stringify(myLinks));
-  renderLinks();  
+  renderLinks();
+})
+    
 }
 
 
